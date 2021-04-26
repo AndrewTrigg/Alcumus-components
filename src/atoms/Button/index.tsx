@@ -14,7 +14,6 @@ export interface ButtonProps {
      */
     size?: 'small' | 'medium' | 'large';
 
-    label: string;
     children: any;
  
     onClick?: () => void;
@@ -26,7 +25,7 @@ function PrimaryButton ({children}: ButtonProps) {
 }
 
 function SecondaryButton ({children}: ButtonProps) {
-    return <button style={{background: 'purple'}} > {children}</button>
+    return <button style={{background: 'blue', padding:'18px', borderRadius: '5px', border: 'none', color: 'white'}}>{children}</button>
 }
 
 export { PrimaryButton, SecondaryButton }

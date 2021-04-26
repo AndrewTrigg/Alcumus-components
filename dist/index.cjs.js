@@ -14,9 +14,7 @@ function PrimaryButton(_a) {
 }
 function SecondaryButton(_a) {
     var children = _a.children;
-    return React__default['default'].createElement("button", { style: { background: 'purple' } },
-        " ",
-        children);
+    return React__default['default'].createElement("button", { style: { background: 'blue', padding: '18px', borderRadius: '5px', border: 'none', color: 'white' } }, children);
 }
 
 exports.PrimaryButton = PrimaryButton;

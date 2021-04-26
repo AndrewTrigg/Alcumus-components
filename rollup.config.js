@@ -3,8 +3,9 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
 import pkg from './package.json';
 import typescript from 'rollup-plugin-typescript2';
+import dts from "rollup-plugin-dts";
 
-export default {
+export default [{
     input: pkg.source,
     output: [
         { file: pkg.main, format: 'cjs' },
@@ -21,7 +22,13 @@ export default {
             tsconfigOverride: {
               exclude: ['**/*.stories.*']
             }
-        })
+        }),
+        // dts()
     ],
     external: Object.keys(pkg.peerDependencies || {}),
-};
+},
+{
+    input: "./dist/types/index.d.ts",
+    output: [{ file: "dist/alcumus-components.d.ts", format: "es" }],
+    plugins: [dts()],
+}]

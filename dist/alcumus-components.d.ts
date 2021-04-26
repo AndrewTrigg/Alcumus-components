@@ -1,4 +1,4 @@
-export interface ButtonProps {
+interface ButtonProps {
     /**
      * Is this the principal call to action on the page?
      */
@@ -16,4 +16,5 @@ export interface ButtonProps {
 }
 declare function PrimaryButton({ children }: ButtonProps): JSX.Element;
 declare function SecondaryButton({ children }: ButtonProps): JSX.Element;
-export { PrimaryButton, SecondaryButton };
+
+export { ButtonProps, PrimaryButton, SecondaryButton };
