@@ -26,7 +26,7 @@ function PrimaryButton ({children}: ButtonProps) {
 }
 
 function SecondaryButton ({children}: ButtonProps) {
-    return <button style={{background: 'green'}} > {children}</button>
+    return <button style={{background: 'purple'}} > {children}</button>
 }
 
 export { PrimaryButton, SecondaryButton }
