@@ -1,1 +1,1 @@
-export { PrimaryButton } from './atoms/index'
+export * from './atoms/index'
