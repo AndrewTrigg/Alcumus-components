@@ -1,17 +1,34 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { PrimaryButton, ButtonProps, SecondaryButton } from "./index";
 
-<Meta title="Atoms/Button" component={PrimaryButton} />
+<Meta
+  title="Atoms/Button"
+  component={PrimaryButton}
+  argTypes={{
+    variant: {
+      control: {
+        type: "radio",
+        options: ["primary", "secondary"],
+      },
+    },
+    disabled: {
+      control: "boolean",
+    },
+  }}
+/>
 
 # Button
 
-With `MDX` we can define a story for `Checkbox` right in the middle of our Markdown documentation.
+With `MDX` we can define a story for `Button` right in the middle of our Markdown documentation.
 
 <Canvas>
-  <Story name="Primary">
-    <PrimaryButton>hello</PrimaryButton>
+  <Story name="Primary" args={{ children: "hello" }}>
+    {(args) => <PrimaryButton {...args} />}
   </Story>
-  <Story name="Secondary">
-    <SecondaryButton>hello</SecondaryButton>
+  <Story
+    name="Secondary"
+    args={{ variant: "secondary", children: "secondary" }}
+  >
+    {(args) => <SecondaryButton {...args} />}
   </Story>
 </Canvas>

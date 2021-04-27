@@ -1,12 +1,12 @@
 import React from 'react'
 import MUIButton from '@material-ui/core/Button';
 
-
 export interface ButtonProps {
     /**
      * Is this the principal call to action on the page?
      */
     primary?: boolean;
+    disabled?: boolean;
     /**
      * What background color to use
      */
@@ -17,17 +17,18 @@ export interface ButtonProps {
     size?: 'small' | 'medium' | 'large';
 
     children: any;
+    variant: 'primary' | 'secondary';
  
     onClick?: () => void;
   }
 
 
-function PrimaryButton ({children}: ButtonProps) {
-    return <MUIButton>{children}</MUIButton>
+function PrimaryButton ({children, disabled}: ButtonProps) {
+    return <MUIButton color="primary" disabled={disabled} variant="outlined">{children}</MUIButton>
 }
 
-function SecondaryButton ({children}: ButtonProps) {
-    return <button style={{background: 'blue', padding:'18px', borderRadius: '5px', border: 'none', color: 'white'}}>{children}</button>
+function SecondaryButton ({children, disabled = false}: ButtonProps) {
+    return <MUIButton color="secondary" disabled={disabled}>{children}</MUIButton>
 }
 
 export { PrimaryButton, SecondaryButton }

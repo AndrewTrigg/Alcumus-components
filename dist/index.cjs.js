@@ -11,12 +11,12 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var MUIButton__default = /*#__PURE__*/_interopDefaultLegacy(MUIButton);
 
 function PrimaryButton(_a) {
-    var children = _a.children;
-    return React__default['default'].createElement(MUIButton__default['default'], null, children);
+    var children = _a.children, disabled = _a.disabled;
+    return React__default['default'].createElement(MUIButton__default['default'], { color: "primary", disabled: disabled, variant: "outlined" }, children);
 }
 function SecondaryButton(_a) {
-    var children = _a.children;
-    return React__default['default'].createElement("button", { style: { background: 'blue', padding: '18px', borderRadius: '5px', border: 'none', color: 'white' } }, children);
+    var children = _a.children, _b = _a.disabled, disabled = _b === void 0 ? false : _b;
+    return React__default['default'].createElement(MUIButton__default['default'], { color: "secondary", disabled: disabled }, children);
 }
 
 exports.PrimaryButton = PrimaryButton;
