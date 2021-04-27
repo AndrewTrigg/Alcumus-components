@@ -1,4 +1,6 @@
 import React from 'react'
+import MUIButton from '@material-ui/core/Button';
+
 
 export interface ButtonProps {
     /**
@@ -21,7 +23,7 @@ export interface ButtonProps {
 
 
 function PrimaryButton ({children}: ButtonProps) {
-    return <button>{children}</button>
+    return <MUIButton>{children}</MUIButton>
 }
 
 function SecondaryButton ({children}: ButtonProps) {
